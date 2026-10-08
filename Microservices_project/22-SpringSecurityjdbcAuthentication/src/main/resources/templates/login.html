@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert the name and password</title>
+</head>
+<body>
+	<div th:if="${param.error}">
+		invalid username and password
+	</div>
+	
+	<div th:if="${param.logout}">
+		you have been logout
+	</div>
+	<br/>
+	<form th:action="@{/login}" method="post">
+		<div><label>USERNAME: <input type="text"  name="username"/></label></div>
+		<div><label>PASSWORD: <input type="password" name="password"/></label></div>
+		<div><input type="submit" value="Sign In"/></div>
+	</form>
+	
+</body>
+</html>
+
+<!-- Why /login Doesn't Reload the Same Page:
+The /login action in your form does not reload the same page because Spring Security intercepts the request to /login and handles it as part of its authentication process. Here's how it works:
+
+Spring Security Login Processing:
+
+Spring Security has a default login processing URL set to /login for handling form-based authentication.
+When the form is submitted to /login with POST method:
+Spring Security checks the submitted username and password.
+It authenticates the user against its UserDetailsService or authentication provider.
+Depending on the authentication outcome, it redirects the user to:
+A default success URL (e.g., / or a custom URL).
+The login page with an error parameter if authentication fails (e.g., /login?error). -->

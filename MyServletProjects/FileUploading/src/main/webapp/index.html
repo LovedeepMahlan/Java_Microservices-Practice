@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Landing Page</title>
+</head>
+<body bgcolor="yellow">
+	<h1 style="color: cyan; text-align: center;"> Registation Form</h1>
+	<form method="post" action="./Upload" enctype="multipart/form-data">
+		<table border='1' align="center" >
+			<tr>
+				<th>USERNAME</th>
+				<td>
+					<input type='text' name='username'/>
+				</td>
+			</tr>
+			<tr>
+				<th>USERADDRESS</th>
+				<td>
+					<input type="text" name="useraddress"/>
+				</td>
+			</tr>
+			<tr>
+				<th>USERRESUME</th>
+				<td>
+					<input type="file" name="userresume"/>
+				</td>
+			</tr>
+			<tr>
+				<th>USERPHOTO</th>
+				<td>
+					<input type="file" name="userphoto"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" name="Register"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

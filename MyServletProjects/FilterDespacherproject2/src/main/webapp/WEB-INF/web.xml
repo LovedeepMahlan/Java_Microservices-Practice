@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>FilterDespacherproject2</display-name>
+  <servlet>
+  <servlet-name>ForwardDespacher</servlet-name>
+  <servlet-class>com.FilterDespacher.ForwardDespacher</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ForwardDespacher</servlet-name>
+  <url-pattern>/forward</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>TargetServlet</servlet-name>
+  <servlet-class>com.FilterDespacher.TargetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>TargetServlet</servlet-name>
+  <url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>ErrorGetervlet</servlet-name>
+  <servlet-class>com.FilterDespacher.ErrorGetervlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ErrorGetervlet</servlet-name>
+  <url-pattern>/test3</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  <exception-type>java.lang.ArithmeticException</exception-type>
+  <location>/test2</location>
+  </error-page>
+  
+  <filter>
+  <filter-name>DemoFilter1</filter-name>
+  <filter-class>com.compney.filter.DemoFilter1</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>DemoFilter1</filter-name>
+  <url-pattern>/test2</url-pattern>
+  <dispatcher>REQUEST</dispatcher>
+  <filter-name>DemoFilter1</filter-name>
+  <url-pattern>/test2</url-pattern>
+  <dispatcher>REQUEST</dispatcher>
+  <filter-name>DemoFilter1</filter-name>
+  <url-pattern>/test2</url-pattern>
+  <dispatcher>REQUEST</dispatcher>
+  <dispatcher>FORWARD</dispatcher>
+  <dispatcher>INCLUDE</dispatcher>
+  <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
+</web-app>

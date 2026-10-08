@@ -1,0 +1,11 @@
+{
+	"id"   : 23,
+	"name" : "Rohit",
+	"friends":["Nonit","Rohit","Sohil"],
+	"address":{
+					"city" : "Chandigarh",
+					"state" :"Haryana",
+					"pinNo" : 124567
+			}
+	
+}
